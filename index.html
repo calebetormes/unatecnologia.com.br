@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- ============================================================
+    META TAGS — Configuração básica do documento
+    ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ── SEO: Título e Descrição ────────────────────────────── -->
+  <!-- COMO ALTERAR: Substitua os textos abaixo com sua descrição -->
+  <title>UNA Tecnologia em Casas — Pré-moldados de Alto Desempenho | Santa Cruz do Sul - RS</title>
+  <meta name="description"
+    content="Construtora especializada em componentes pré-moldados. Modelos de casas de 32m² a 125m² com entrega rápida, qualidade garantida e sustentabilidade. Santa Cruz do Sul - RS." />
+
+  <!-- ── SEO: Open Graph (compartilhamento em redes sociais) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="UNA Tecnologia em Casas — Pré-moldados de Alto Desempenho" />
+  <meta property="og:description"
+    content="Sua obra no tempo certo. Modelos de 32m² a 125m² com pré-moldados de alta qualidade." />
+  <meta property="og:image" content="assets/brand/logo_clara-1024x329.png" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- ── Favicon e Ícone do Site (Navegador, Google, Favoritos) ── -->
+  <link rel="icon" href="assets/brand/site-ico.svg" type="image/svg+xml" />
+  <link rel="shortcut icon" href="assets/brand/site-ico.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/brand/site-ico.svg" />
+  <link rel="mask-icon" href="assets/brand/site-ico.svg" color="#C06A2C" />
+
+  <!-- ── CSS: Importa todos os módulos via main.css ──────────── -->
+  <!--
+    COMO FUNCIONA:
+    main.css é o arquivo "orquestrador" que importa:
+      1. base.css       (reset + variáveis CSS)
+      2. header.css     (cabeçalho e menu)
+      3. footer.css     (rodapé + botão WhatsApp)
+      4. components.css (todas as seções e componentes)
+  -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Preconnect para Google Fonts (melhora performance de carregamento) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+    CABEÇALHO FIXO — Navegação principal do site
+    O header fica fixo no topo (position: fixed via CSS).
+    A classe 'is-scrolled' é adicionada pelo menu.js ao rolar.
+    ============================================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!-- ── LOGO ─────────────────────────────────────────── -->
+      <!-- COMO ALTERAR O LOGO: Troque o src da imagem abaixo -->
+      <a href="#inicio" class="header-logo" aria-label="UNA Tecnologia — Ir para o início">
+        <img src="assets/brand/logo_clara-1024x329.png" srcset="
+            assets/brand/logo_clara-300x96.png   300w,
+            assets/brand/logo_clara-768x247.png  768w,
+            assets/brand/logo_clara-1024x329.png 1024w
+          " sizes="(max-width: 400px) 200px, 260px" alt="UNA Tecnologia em Casas — Logo" width="260" height="84"
+          fetchpriority="high" />
+      </a>
+
+      <!-- ── NAVEGAÇÃO DESKTOP ─────────────────────────────── -->
+      <!--
+        COMO ADICIONAR UM ITEM AO MENU:
+        Copie uma das <li> abaixo e ajuste o href e o texto.
+        O href deve corresponder ao id de uma <section> na página.
+      -->
+      <nav class="header-nav" aria-label="Navegação principal">
+        <ul class="nav-menu-list" role="list">
+          <li class="nav-menu-item">
+            <a href="#inicio" class="nav-menu-link">Início</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#sobre-nos" class="nav-menu-link">Sobre Nós</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#modelos" class="nav-menu-link">Modelos</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#memorial" class="nav-menu-link">Memorial Descritivo</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#galeria" class="nav-menu-link">Imagens</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#contato" class="nav-menu-link">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ── AÇÕES DO CABEÇALHO (Ícones sociais) ───────────── -->
+      <div class="header-actions" aria-label="Redes sociais">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/unatecnologiaemcasas/" class="header-social-link" target="_blank"
+          rel="noopener noreferrer" aria-label="Visitar nosso Instagram">
+          <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+          </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+gostaria+de+solicitar+um+or%C3%A7amento."
+          class="header-social-link" target="_blank" rel="noopener noreferrer"
+          aria-label="Entrar em contato pelo WhatsApp">
+          <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- ── BOTÃO HAMBÚRGUER (Mobile) ─────────────────────── -->
+      <!-- Visível apenas em telas menores que 900px (via CSS) -->
+      <button class="header-menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false"
+        aria-controls="nav-mobile-panel">
+        <span class="toggle-bar" aria-hidden="true"></span>
+        <span class="toggle-bar" aria-hidden="true"></span>
+        <span class="toggle-bar" aria-hidden="true"></span>
+      </button>
+
+    </div><!-- /.header-inner -->
+  </header>
+
+  <!-- ── PAINEL DE MENU MOBILE ─────────────────────────────── -->
+  <!-- Controlado pelo menu.js — aparece em telas pequenas -->
+  <nav class="nav-mobile-panel" id="nav-mobile-panel" aria-label="Menu mobile" aria-hidden="true">
+    <ul class="nav-mobile-list" role="list">
+      <li><a href="#inicio" class="nav-mobile-link">Início</a></li>
+      <li><a href="#sobre-nos" class="nav-mobile-link">Sobre Nós</a></li>
+      <li><a href="#modelos" class="nav-mobile-link">Modelos Disponíveis</a></li>
+      <li><a href="#memorial" class="nav-mobile-link">Memorial Descritivo</a></li>
+      <li><a href="#galeria" class="nav-mobile-link">Imagens</a></li>
+      <li><a href="#contato" class="nav-mobile-link">Contato</a></li>
+    </ul>
+    <!-- Ícones sociais no rodapé do menu mobile -->
+    <div class="nav-mobile-footer">
+      <a href="https://www.instagram.com/unatecnologiaemcasas/" target="_blank" rel="noopener noreferrer"
+        class="footer-social-link" aria-label="Instagram">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+        </svg>
+      </a>
+      <a href="https://wa.me/5551996960495" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+        aria-label="WhatsApp">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+    CONTEÚDO PRINCIPAL
+    <main> envolve todo o conteúdo da página (semântica HTML5).
+    ============================================================ -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 1: HERO / INÍCIO
+      Layout idêntico à imagem de referência com conteúdo posicionado à direita
+      ══════════════════════════════════════════════════════ -->
+    <section class="hero-section section-anchor" id="inicio" aria-labelledby="hero-title">
+
+      <!-- Imagem de fundo sem distorção -->
+      <div class="hero-background" role="img" aria-hidden="true"></div>
+
+      <!-- Camada translúcida e grid arquitetônico com animação ultra suave por GPU -->
+      <div class="hero-grid-overlay" aria-hidden="true">
+        <div class="hero-grid-pattern hero-grid-pattern--primary"></div>
+        <div class="hero-grid-pattern hero-grid-pattern--sub"></div>
+      </div>
+
+      <!-- Contêiner do Hero com alinhamento à direita -->
+      <div class="container hero-brand-container">
+        <div class="hero-brand-content reveal-on-scroll">
+
+          <!-- Ícone Casa UNA (Terracota e Chumbo escuro - logo-dark.png) -->
+          <div class="hero-brand-icon-wrap">
+            <img
+              class="hero-brand-icon"
+              src="assets/brand/logo-dark.png"
+              alt="Ícone UNA Tecnologia"
+              width="140"
+              height="118"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Título H1 em Caixa Alta em tom Telha -->
+          <h1 class="hero-brand-title" id="hero-title">
+            SUA OBRA NO TEMPO CERTO, COM PRÉ-MOLDADOS DE ALTO DESEMPENHO
+          </h1>
+
+          <!-- Botão CTA único: Modelos Prontos para Construir -->
+          <div class="hero-brand-actions">
+            <a href="#modelos" class="btn-hero-brand-cta">
+              Modelos Prontos para Construir
+            </a>
+          </div>
+
+        </div><!-- /.hero-brand-content -->
+      </div><!-- /.hero-brand-container -->
+
+      <!-- Recorte poligonal inclinado na base conectando à Seção 2 -->
+      <div class="hero-bottom-slant" aria-hidden="true"></div>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 2: SOBRE NÓS
+      Layout idêntico à imagem de referência (fundo Chumbo #383838)
+      ══════════════════════════════════════════════════════ -->
+    <section class="site-section about-brand-section section-anchor" id="sobre-nos" aria-labelledby="about-title">
+      <div class="container about-brand-container">
+
+        <!-- Grid de duas colunas: Ícone à esquerda + Conteúdo à direita -->
+        <div class="about-brand-grid reveal-on-scroll">
+
+          <!-- Coluna 1: Ícone Casa UNA (logo-white.png) -->
+          <div class="about-brand-icon-col">
+            <img
+              src="assets/brand/logo-white.png"
+              alt="Símbolo UNA Tecnologia"
+              width="240"
+              height="200"
+              class="about-brand-symbol"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Coluna 2: Textos institucionais e Missão -->
+          <div class="about-brand-text-col">
+            <h2 class="about-brand-title" id="about-title">SOBRE NÓS</h2>
+
+            <div class="about-brand-main-text">
+              <p>
+                Somos uma construtora moderna, guiada pelos princípios de engenharia sistêmica, gestão da qualidade, inovação tecnológica, responsabilidade social e sustentabilidade ambiental. Nosso foco é melhorar a qualidade de vida dos clientes e da sociedade. Comprometemo-nos a cumprir nossos acordos, entregando produtos de alta qualidade e sustentabilidade. Somos mais que uma empresa de construção; somos uma missão dedicada ao ser humano, priorizando o bem-estar das pessoas. Descubra como fazemos a diferença em cada projeto.
+              </p>
+            </div>
+
+            <!-- Bloco Missão -->
+            <div class="about-brand-mission-block">
+              <h3 class="about-mission-heading">Missão</h3>
+              <p class="about-mission-description">
+                Proporcionar qualidade, segurança e desempenho em cada componente pré-moldado, contribuindo para construções mais rápidas, inteligentes e sustentáveis. Desenvolvemos soluções que valorizam pessoas, otimizam processos e constroem um futuro mais eficiente para todos.
+              </p>
+            </div>
+
+          </div><!-- /.about-brand-text-col -->
+
+        </div><!-- /.about-brand-grid -->
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 3: MODELOS DISPONÍVEIS
+      Grid de cards com todos os modelos de casas.
+      ══════════════════════════════════════════════════════ -->
+    <section class="site-section site-section--alt section-anchor" id="modelos" aria-labelledby="models-title">
+      <div class="container">
+
+        <!-- Cabeçalho da seção -->
+        <header class="section-header reveal-on-scroll">
+          <span class="section-badge">Catálogo completo</span>
+          <h2 class="section-title" id="models-title">Modelos Disponíveis para Construir</h2>
+          <p class="section-subtitle">
+            Modelos pensados para entregar eficiência, economia e excelente aproveitamento de espaço.
+            Telha de fibrocimento 6mm | com platibanda | aluzinco TP40 ou colonial.
+          </p>
+        </header>
+
+        <!--
+          GRID DE MODELOS
+          ─────────────────────────────────────────────────────
+          COMO ADICIONAR UM NOVO MODELO:
+          1. Copie um bloco <article class="model-card">...</article>
+          2. Atualize o data-model-id com o nome do modelo
+          3. Troque as imagens (src e srcset) para as do novo modelo
+          4. Atualize o nome, tipo e área
+          5. Atualize o link do WhatsApp no botão
+          ─────────────────────────────────────────────────────
+        -->
+        <div class="models-grid" id="models-grid">
+
+          <!-- ── MODELO: HP 32 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-32" data-model-id="HP 32">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 32</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 32,49 metros quadrados</p>
+            </div>
+
+            <!-- Imagens do modelo com miniatura de planta sobreposta -->
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img
+                    src="assets/models/32f.jpg"
+                    srcset="
+                      assets/models/32f-300x171.jpg   300w,
+                      assets/models/32f-768x439.jpg   768w,
+                      assets/models/32f.jpg          1024w
+                    "
+                    sizes="(max-width: 480px) 100vw, 300px"
+                    alt="HP 32 — Vista frontal"
+                    loading="lazy"
+                    width="400"
+                    height="240"
+                    data-lightbox="assets/models/32f.jpg"
+                    data-lightbox-alt="HP 32 — Fachada"
+                  />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img
+                    src="assets/models/32fp-1024x574.webp"
+                    srcset="
+                      assets/models/32fp-300x168.webp  300w,
+                      assets/models/32fp-768x430.webp  768w,
+                      assets/models/32fp-1024x574.webp 1024w
+                    "
+                    sizes="(max-width: 480px) 100vw, 300px"
+                    alt="HP 32 — Perspectiva"
+                    loading="lazy"
+                    width="400"
+                    height="240"
+                    data-lightbox="assets/models/32fp.webp"
+                    data-lightbox-alt="HP 32 — Perspectiva"
+                  />
+                </div>
+              </div>
+
+              <!-- Miniatura da planta baixa com borda arredondada e contorno em terracota -->
+              <div class="model-floorplan-badge">
+                <img
+                  src="assets/models/32pb.jpg"
+                  srcset="assets/models/32pb-297x300.jpg 297w, assets/models/32pb.jpg 676w"
+                  sizes="160px"
+                  alt="HP 32 — Planta baixa"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                  data-lightbox="assets/models/32pb.jpg"
+                  data-lightbox-alt="HP 32 — Planta baixa"
+                />
+              </div>
+            </div>
+
+            <!-- Botão de Orçamento WhatsApp em Terracota com ícone -->
+            <div class="model-brand-footer">
+              <a
+                href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+32.+Pode+me+enviar+mais+informa%C3%A7%C3%B5es+e+um+or%C3%A7amento%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-model-brand-cta"
+                id="cta-hp-32"
+              >
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 42 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-42" data-model-id="HP 42">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 42</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 42,25 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/42f.jpg"
+                    srcset="assets/models/42f-300x173.jpg 300w, assets/models/42f-768x443.jpg 768w, assets/models/42f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 42 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/42f.jpg" data-lightbox-alt="HP 42 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/42fp.jpg"
+                    srcset="assets/models/42fp-300x160.jpg 300w, assets/models/42fp-768x410.jpg 768w, assets/models/42fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 42 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/42fp.jpg" data-lightbox-alt="HP 42 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/42pb.jpg"
+                  srcset="assets/models/42pb-295x300.jpg 295w, assets/models/42pb.jpg 635w"
+                  sizes="160px" alt="HP 42 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/42pb.jpg" data-lightbox-alt="HP 42 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+42." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-42">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 54 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-54" data-model-id="HP 54">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 54</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 54,29 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/54f.jpg"
+                    srcset="assets/models/54f-300x171.jpg 300w, assets/models/54f-768x437.jpg 768w, assets/models/54f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 54 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/54f.jpg" data-lightbox-alt="HP 54 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/54fp.jpg"
+                    srcset="assets/models/54fp-300x168.jpg 300w, assets/models/54fp-768x429.jpg 768w, assets/models/54fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 54 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/54fp.jpg" data-lightbox-alt="HP 54 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/54pb-1024x829.jpg"
+                  srcset="assets/models/54pb-300x243.jpg 300w, assets/models/54pb-768x622.jpg 768w, assets/models/54pb-1024x829.jpg 1024w"
+                  sizes="160px" alt="HP 54 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/54pb.jpg" data-lightbox-alt="HP 54 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+54." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-54">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 65 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-65" data-model-id="HP 65">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 65</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 65,62 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/65f.jpg"
+                    srcset="assets/models/65f-300x171.jpg 300w, assets/models/65f-768x437.jpg 768w, assets/models/65f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 65 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/65f.jpg" data-lightbox-alt="HP 65 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/65fp.jpg"
+                    srcset="assets/models/65fp-300x168.jpg 300w, assets/models/65fp-768x429.jpg 768w, assets/models/65fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 65 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/65fp.jpg" data-lightbox-alt="HP 65 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/65pb.jpg"
+                  srcset="assets/models/65pb-300x223.jpg 300w, assets/models/65pb-768x570.jpg 768w, assets/models/65pb.jpg 941w"
+                  sizes="160px" alt="HP 65 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/65pb.jpg" data-lightbox-alt="HP 65 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+65." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-65">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 67 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-67" data-model-id="HP 67">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 67</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 67,52 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/67f.jpg"
+                    srcset="assets/models/67f-300x168.jpg 300w, assets/models/67f-768x429.jpg 768w, assets/models/67f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 67 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/67f.jpg" data-lightbox-alt="HP 67 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/67fp-1.jpg"
+                    srcset="assets/models/67fp-1-300x173.jpg 300w, assets/models/67fp-1-768x443.jpg 768w, assets/models/67fp-1.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 67 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/67fp-1.jpg" data-lightbox-alt="HP 67 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/67pb.jpg"
+                  srcset="assets/models/67pb-300x234.jpg 300w, assets/models/67pb-768x600.jpg 768w, assets/models/67pb.jpg 982w"
+                  sizes="160px" alt="HP 67 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/67pb.jpg" data-lightbox-alt="HP 67 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+67." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-67">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 67 COM GARAGEM ─────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-67g" data-model-id="HP 67 Garagem">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 67 — Garagem</h3>
+              <p class="model-brand-type">Modelo de fachada com garagem</p>
+              <p class="model-brand-area">Área de 67,52 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/67Garagem-f.jpg"
+                    srcset="assets/models/67Garagem-f-300x153.jpg 300w, assets/models/67Garagem-f-768x392.jpg 768w, assets/models/67Garagem-f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 67 Garagem — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/67Garagem-f.jpg" data-lightbox-alt="HP 67 Garagem — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/67G-fp.jpg"
+                    srcset="assets/models/67G-fp-300x168.jpg 300w, assets/models/67G-fp-768x429.jpg 768w, assets/models/67G-fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 67 Garagem — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/67G-fp.jpg" data-lightbox-alt="HP 67 Garagem — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/67g-pb.jpg"
+                  srcset="assets/models/67g-pb-300x237.jpg 300w, assets/models/67g-pb-768x606.jpg 768w, assets/models/67g-pb.jpg 776w"
+                  sizes="160px" alt="HP 67 Garagem — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/67g-pb.jpg" data-lightbox-alt="HP 67 Garagem — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+67+com+garagem."
+                target="_blank" rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-67g">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 70 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-70" data-model-id="HP 70">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 70</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 70,33 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/70f.jpg"
+                    srcset="assets/models/70f-300x166.jpg 300w, assets/models/70f-768x424.jpg 768w, assets/models/70f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 70 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/70f.jpg" data-lightbox-alt="HP 70 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/70fp.jpg"
+                    srcset="assets/models/70fp-300x166.jpg 300w, assets/models/70fp-768x424.jpg 768w, assets/models/70fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 70 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/70fp.jpg" data-lightbox-alt="HP 70 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/70pb-1024x763.jpg"
+                  srcset="assets/models/70pb-300x224.jpg 300w, assets/models/70pb-768x572.jpg 768w, assets/models/70pb-1024x763.jpg 1024w"
+                  sizes="160px" alt="HP 70 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/70pb.jpg" data-lightbox-alt="HP 70 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+70." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-70">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 75 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-75" data-model-id="HP 75">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 75</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de 75,19 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/75f.jpg"
+                    srcset="assets/models/75f-300x129.jpg 300w, assets/models/75f-768x329.jpg 768w, assets/models/75f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 75 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/75f.jpg" data-lightbox-alt="HP 75 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/75fp.jpg"
+                    srcset="assets/models/75fp-300x171.jpg 300w, assets/models/75fp-768x437.jpg 768w, assets/models/75fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 75 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/75fp.jpg" data-lightbox-alt="HP 75 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/75pb-1024x752.jpg"
+                  srcset="assets/models/75pb-300x220.jpg 300w, assets/models/75pb-768x564.jpg 768w, assets/models/75pb-1024x752.jpg 1024w"
+                  sizes="160px" alt="HP 75 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/75pb.jpg" data-lightbox-alt="HP 75 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+75." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-75">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+          <!-- ── MODELO: HP 90 ─────────────────────────────── -->
+          <article class="model-brand-card reveal-on-scroll" id="model-hp-90" data-model-id="HP 90">
+            <div class="model-brand-header">
+              <h3 class="model-brand-title">HP 90</h3>
+              <p class="model-brand-type">Modelo de fachada</p>
+              <p class="model-brand-area">Área de ~90 metros quadrados</p>
+            </div>
+
+            <div class="model-brand-gallery">
+              <div class="model-facade-images">
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/90f.jpg"
+                    srcset="assets/models/90f-300x122.jpg 300w, assets/models/90f-768x312.jpg 768w, assets/models/90f.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 90 — Fachada" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/90f.jpg" data-lightbox-alt="HP 90 — Fachada" />
+                </div>
+                <div class="model-facade-img-wrap">
+                  <img src="assets/models/90fp.jpg"
+                    srcset="assets/models/90fp-300x166.jpg 300w, assets/models/90fp-768x424.jpg 768w, assets/models/90fp.jpg 1024w"
+                    sizes="(max-width: 480px) 100vw, 300px" alt="HP 90 — Perspectiva" loading="lazy" width="400" height="240"
+                    data-lightbox="assets/models/90fp.jpg" data-lightbox-alt="HP 90 — Perspectiva" />
+                </div>
+              </div>
+              <div class="model-floorplan-badge">
+                <img src="assets/models/90pb-1013x1024.jpg"
+                  srcset="assets/models/90pb-297x300.jpg 297w, assets/models/90pb-768x776.jpg 768w, assets/models/90pb-1013x1024.jpg 1013w"
+                  sizes="160px" alt="HP 90 — Planta baixa" loading="lazy" width="160" height="160"
+                  data-lightbox="assets/models/90pb.jpg" data-lightbox-alt="HP 90 — Planta baixa" />
+              </div>
+            </div>
+
+            <div class="model-brand-footer">
+              <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+tenho+interesse+no+modelo+HP+90." target="_blank"
+                rel="noopener noreferrer" class="btn-model-brand-cta" id="cta-hp-90">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"/>
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /#models-grid -->
+
+        <!-- CTA geral após os modelos -->
+        <div style="text-align: center; margin-top: var(--space-3xl);" class="reveal-on-scroll">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+            Não encontrou o modelo ideal? Entre em contato e montamos um orçamento personalizado para você.
+          </p>
+          <a href="#contato" class="btn btn-primary btn-lg">
+            Solicitar Orçamento Personalizado
+          </a>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 4: MEMORIAL DESCRITIVO
+      Layout idêntico à imagem de referência com memorial-descritivo-bg.jpg
+      ══════════════════════════════════════════════════════ -->
+    <section class="site-section memorial-section section-anchor" id="memorial" aria-labelledby="memorial-title">
+      <div class="memorial-bg" role="img" aria-hidden="true"></div>
+      <div class="container memorial-container">
+
+        <header class="memorial-header reveal-on-scroll">
+          <h2 class="memorial-title" id="memorial-title">MEMORIAL DESCRITIVO</h2>
+          <p class="memorial-subtitle">
+            Transparência e qualidade em cada detalhe da sua construção. Aqui você encontra a descrição completa dos
+            sistemas construtivos, materiais e especificações técnicas que compõem nossos modelos.
+          </p>
+        </header>
+
+        <div class="memorial-box-wrapper reveal-on-scroll">
+          <div class="memorial-card-info">
+            <h3 class="memorial-box-heading">No memorial descritivo você encontrará informações sobre:</h3>
+            <ul class="memorial-items-list" role="list">
+              <li>Fundações (radier)</li>
+              <li>Paredes pré-moldadas com câmara de ar</li>
+              <li>Esquadrias</li>
+              <li>Cobertura</li>
+              <li>Revestimentos</li>
+              <li>Instalações elétricas e hidrossanitárias</li>
+              <li>Acabamentos</li>
+              <li>Modelos e valores atualizados</li>
+            </ul>
+            <div class="memorial-action-center">
+              <a href="assets/memorial/Memorial_Descritivo_UNA_TECNOL.pdf"
+                class="btn btn-accent btn-memorial-download" download="Memorial_Descritivo_UNA_Tecnologia.pdf"
+                id="download-memorial-btn">
+                Baixar Memorial Descritivo Completo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 5: GALERIA DE IMAGENS
+      Carrossel com fotos dos projetos realizados (estilo escuro).
+      ══════════════════════════════════════════════════════ -->
+    <section class="site-section gallery-section section-anchor" id="galeria" aria-labelledby="gallery-title">
+      <div class="container gallery-container">
+
+        <header class="gallery-header reveal-on-scroll">
+          <h2 class="gallery-title" id="gallery-title">VEJA ALGUNS DE NOSSOS PROJETOS</h2>
+        </header>
+
+        <!-- Carrossel de imagens — controlado pelo main.js -->
+        <div class="gallery-carousel reveal-on-scroll" id="gallery-carousel" aria-label="Galeria de projetos">
+
+          <!-- Faixa de slides -->
+          <div class="gallery-track" id="gallery-track">
+
+            <!-- COMO ADICIONAR FOTOS À GALERIA:
+                 Copie um <div class="gallery-slide"> e atualize
+                 o src e srcset com o caminho da nova imagem. -->
+
+            <div class="gallery-slide">
+              <img src="assets/gallery/img32.jpg" alt="Projeto UNA Tecnologia — Obra 1" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img32.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 1" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img31.jpg" alt="Projeto UNA Tecnologia — Obra 2" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img31.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 2" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img28.jpg" alt="Projeto UNA Tecnologia — Obra 3" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img28.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 3" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img27.jpg" alt="Projeto UNA Tecnologia — Obra 4" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img27.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 4" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img24.jpg" alt="Projeto UNA Tecnologia — Obra 5" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img24.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 5" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img23.jpg" alt="Projeto UNA Tecnologia — Obra 6" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img23.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 6" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img20.jpg" alt="Projeto UNA Tecnologia — Obra 7" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img20.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 7" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img19.jpg" alt="Projeto UNA Tecnologia — Obra 8" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img19.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 8" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img12.jpg" alt="Projeto UNA Tecnologia — Obra 9" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img12.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 9" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img11.jpg" alt="Projeto UNA Tecnologia — Obra 10" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img11.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 10" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img15.jpg" alt="Projeto UNA Tecnologia — Obra 11" loading="lazy"
+                width="400" height="300" data-lightbox="assets/gallery/img15.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 11" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img-obra12.jpg"
+                alt="Projeto UNA Tecnologia — Obra 12" loading="lazy" width="400" height="300"
+                data-lightbox="assets/gallery/img-obra12.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 12" />
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/gallery/img-obra13.jpg"
+                alt="Projeto UNA Tecnologia — Obra 13" loading="lazy" width="400" height="300"
+                data-lightbox="assets/gallery/img-obra13.jpg"
+                data-lightbox-alt="Projeto UNA — Obra concluída 13" />
+            </div>
+
+          </div><!-- /#gallery-track -->
+
+          <!-- Botões de navegação do carrossel -->
+          <button class="gallery-nav-btn gallery-nav-btn--prev" id="gallery-prev-btn" aria-label="Slide anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" fill="currentColor" />
+            </svg>
+          </button>
+          <button class="gallery-nav-btn gallery-nav-btn--next" id="gallery-next-btn" aria-label="Próximo slide">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" fill="currentColor" />
+            </svg>
+          </button>
+
+        </div><!-- /.gallery-carousel -->
+
+        <!-- Bolinhas de paginação — geradas pelo JS -->
+        <div class="gallery-pagination" id="gallery-pagination" role="group" aria-label="Navegação do carrossel"></div>
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+      SEÇÃO 6: CONTATO & BRANDING (Layout idêntico à imagem)
+      ══════════════════════════════════════════════════════ -->
+    <section class="site-section contact-brand-section section-anchor" id="contato"
+      aria-labelledby="contact-brand-title">
+
+      <!-- Faixa de transição angular superior com fundo blueprint e logo UNA -->
+      <div class="contact-blueprint-strip">
+        <div class="contact-blueprint-bg"></div>
+        <div class="contact-blueprint-overlay"></div>
+        <div class="contact-blueprint-logo">
+          <img src="assets/brand/logo_clara-1024x329.png" srcset="
+              assets/brand/logo_clara-300x96.png   300w,
+              assets/brand/logo_clara-768x247.png  768w,
+              assets/brand/logo_clara-1024x329.png 1024w
+            " sizes="(max-width: 480px) 180px, 260px" alt="UNA Tecnologia Prefabbricate" width="260" height="84"
+            loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Área principal de contato sobre fundo escuro Chumbo com recorte angular -->
+      <div class="contact-main-body">
+        <div class="container contact-brand-container">
+
+          <!-- Coluna Esquerda: Badge Minha Casa Minha Vida -->
+          <div class="contact-mcmv-badge-col reveal-on-scroll">
+            <a href="https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida"
+              target="_blank" rel="noopener noreferrer" class="mcmv-pill-card" title="Programa Minha Casa Minha Vida">
+              <img src="assets/contact/mcmv-badge.png" alt="Minha Casa Minha Vida"
+                width="140" height="100" loading="lazy" />
+            </a>
+          </div>
+
+          <!-- Coluna Central/Direita: Ícone Casa UNA, Endereço, Telefones, Email e Redes Sociais -->
+          <div class="contact-brand-info-col reveal-on-scroll">
+            <div class="contact-brand-icon">
+              <img
+                src="assets/brand/logo-white.png"
+                alt="Símbolo UNA Tecnologia"
+                width="110"
+                height="92"
+                loading="lazy"
+              />
+            </div>
+
+            <h2 id="contact-brand-title" class="sr-only">Informações de Contato UNA Tecnologia</h2>
+
+            <address class="contact-brand-address">
+              Rua Dos Jerivas 80, Santa Cruz do Sul - RS<br />
+              Bairro Country
+            </address>
+
+            <div class="contact-brand-phones">
+              <a href="tel:+5551991596216">(51) 9 9159-6216</a>
+              <a href="tel:+5551996960495">(51) 9 9696-0495</a>
+            </div>
+
+            <div class="contact-brand-email">
+              <a href="mailto:contato@unatecnologia.com.br">contato@unatecnologia.com.br</a>
+            </div>
+
+            <!-- Ícones Sociais circulares em terracota com ícone branco -->
+            <div class="contact-brand-socials">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/unatecnologiaemcasas/" target="_blank" rel="noopener noreferrer"
+                class="brand-social-circle" aria-label="Instagram da UNA Tecnologia">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/5551996960495" target="_blank" rel="noopener noreferrer"
+                class="brand-social-circle" aria-label="WhatsApp da UNA Tecnologia">
+                <svg viewBox="0 0 448 512" aria-hidden="true">
+                  <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="brand-social-circle"
+                aria-label="Facebook da UNA Tecnologia">
+                <svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div><!-- /.contact-brand-container -->
+      </div><!-- /.contact-main-body -->
+
+    </section>
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+    RODAPÉ DO SITE
+    Contém: logo, sobre nós, links rápidos e copyright.
+    ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <!-- Barra de copyright -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span id="footer-year">2026</span> UNA Tecnologia em Casas. Todos os direitos reservados.
+        </p>
+        <p class="footer-copyright">
+          site desenvolvido por @artdstudio
+        </p>
+      </div>
+
+    </div><!-- /.container -->
+  </footer>
+
+
+  <!-- ============================================================
+    LIGHTBOX (fora do fluxo principal)
+    Visualizador de imagem em tela cheia.
+    Controlado pelo initLightbox() no main.js.
+    ============================================================ -->
+  <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true"
+    aria-label="Visualizador de imagem" aria-hidden="true">
+    <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Fechar visualizador">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          fill="currentColor" />
+      </svg>
+    </button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+  </div>
+
+
+  <!-- ============================================================
+    BOTÃO FLUTUANTE DO WHATSAPP
+    Aparece em todas as páginas para contato rápido.
+    ============================================================ -->
+  <!-- COMO ALTERAR O NÚMERO: substitua o número no href abaixo -->
+  <a href="https://wa.me/5551996960495?text=Ol%C3%A1%2C+gostaria+de+solicitar+um+or%C3%A7amento."
+    class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" id="whatsapp-float-btn"
+    aria-label="Entrar em contato pelo WhatsApp">
+    <svg viewBox="0 0 448 512" aria-hidden="true">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+
+  <!-- ============================================================
+    SCRIPTS JAVASCRIPT
+    O atributo defer garante que o HTML esteja pronto antes da execução.
+    Todos os módulos (menu, formulário, carrossel, lightbox) estão
+    unificados no js/main.js para compatibilidade máxima.
+    ============================================================ -->
+  <script defer src="js/main.js"></script>
+
+  <!-- Script para atualizar o ano do copyright automaticamente -->
+  <script>
+    // Atualiza o ano do copyright automaticamente
+    const yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

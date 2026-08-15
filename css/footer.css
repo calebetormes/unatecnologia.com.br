@@ -1,0 +1,213 @@
+/*
+ * ============================================================
+ * footer.css — Estilos do Rodapé do Site
+ * ============================================================
+ * Responsável por:
+ *   - Layout geral do rodapé (três colunas)
+ *   - Barra de copyright inferior
+ *   - Botão flutuante do WhatsApp
+ *   - Responsividade do rodapé
+ *
+ * COMO ALTERAR O RODAPÉ:
+ *   As informações de texto (endereço, telefones, e-mail)
+ *   estão diretamente no index.html, dentro de <footer>.
+ * ============================================================
+ */
+
+/* ── RODAPÉ PRINCIPAL ────────────────────────────────────── */
+/* Fundo escuro que contrasta com o corpo do site */
+.site-footer {
+  background-color: var(--color-carbono);
+  color: var(--color-text-light);
+  padding-top: var(--space-2xl);
+}
+
+/* ── GRID DO RODAPÉ ──────────────────────────────────────── */
+/* Layout de duas colunas: logo/sobre | links */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-4xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: start;
+}
+
+.footer-column--nav {
+  min-width: 180px;
+}
+
+/* ── COLUNA DO RODAPÉ ────────────────────────────────────── */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Logo no rodapé */
+.footer-logo img {
+  height: 50px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Descrição breve da empresa no rodapé */
+.footer-tagline {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* ── TÍTULO DA COLUNA DO RODAPÉ ─────────────────────────── */
+.footer-column-title {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: 800;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  /* Linha decorativa abaixo do título */
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-telha);
+  display: inline-block;
+}
+
+/* ── LINKS DO RODAPÉ ─────────────────────────────────────── */
+/* Container dos links de navegação rápida no rodapé */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-link {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--transition-fast),
+              padding-left var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-link:hover {
+  color: var(--color-telha);
+  padding-left: var(--space-sm);
+}
+
+/* Seta indicativa nos links do rodapé */
+.footer-link::before {
+  content: '›';
+  font-size: 1.2em;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.footer-link:hover::before {
+  transform: translateX(3px);
+}
+
+/* ── BARRA DE COPYRIGHT ──────────────────────────────────── */
+/* Linha inferior do rodapé com copyright e créditos */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-block: var(--space-xl);
+}
+
+.footer-copyright {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── BOTÃO FLUTUANTE DO WHATSAPP ─────────────────────────── */
+/*
+ * Botão fixo no canto inferior direito que leva ao WhatsApp.
+ * É o principal canal de contato rápido do site.
+ */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: white;
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-fast);
+  /* Pulsação inicial para chamar atenção */
+  animation: whatsapp-pulse 2s ease-in-out 2s 3;
+}
+
+.whatsapp-float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+  background-color: #1fba59;
+}
+
+.whatsapp-float-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Animação de pulsação para chamar atenção */
+@keyframes whatsapp-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+/* Em telas muito pequenas, o texto do botão é ocultado */
+@media (max-width: 480px) {
+  .whatsapp-float-btn span {
+    display: none;
+  }
+  .whatsapp-float-btn {
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    justify-content: center;
+    border-radius: var(--radius-full);
+  }
+}
+
+/* ── RESPONSIVIDADE DO RODAPÉ ────────────────────────────── */
+/* Em tablets, o grid passa a duas colunas */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+/* Em mobile, uma única coluna empilhada */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whatsapp-float-btn {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+}

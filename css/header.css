@@ -1,0 +1,310 @@
+/*
+ * ============================================================
+ * header.css — Estilos do Cabeçalho e Menu de Navegação
+ * ============================================================
+ * Responsável por:
+ *   - Layout do cabeçalho fixo (sticky header)
+ *   - Menu de navegação horizontal (desktop)
+ *   - Menu mobile/hambúrguer (responsivo)
+ *   - Animação de scroll (encolhe ao rolar a página)
+ *   - Botão de fechar/abrir menu mobile
+ *
+ * COMO ADICIONAR UM NOVO ITEM AO MENU:
+ *   Abra o index.html e adicione um novo <li> dentro da
+ *   <ul class="nav-menu-list"> com a estrutura:
+ *   <li><a href="#sua-secao">Novo Item</a></li>
+ * ============================================================
+ */
+
+/* ── CABEÇALHO PRINCIPAL ─────────────────────────────────── */
+/* O cabeçalho fica fixo no topo e sobre todos os elementos */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: var(--color-bg-dark);
+  /* Sombra discreta que aparece ao rolar a página */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  /* Transição suave de altura e sombra ao rolar */
+  transition: height var(--transition-normal),
+              background-color var(--transition-normal);
+}
+
+/* Estado "encolhido": ativado por JavaScript ao rolar a página */
+.site-header.is-scrolled {
+  height: 60px;
+  background-color: rgba(26, 26, 26, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+/* Layout interno do cabeçalho: logo | menu | ações */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-lg);
+}
+
+/* ── LOGO ────────────────────────────────────────────────── */
+/* Área do logotipo no canto esquerdo do cabeçalho */
+.header-logo {
+  flex-shrink: 0; /* Evita que o logo seja comprimido */
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 44px;
+  width: auto;
+  /* Transição suave ao encolher o cabeçalho */
+  transition: height var(--transition-normal);
+}
+
+/* Logo menor quando o cabeçalho está encolhido */
+.site-header.is-scrolled .header-logo img {
+  height: 36px;
+}
+
+/* ── NAVEGAÇÃO PRINCIPAL (Desktop) ─────────────────────────  */
+/* Exibido em telas maiores que 768px */
+.header-nav {
+  flex: 1; /* Ocupa o espaço disponível entre logo e ações */
+  display: flex;
+  justify-content: center;
+}
+
+/* Lista de itens do menu */
+.nav-menu-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Item individual do menu */
+.nav-menu-item {
+  position: relative;
+}
+
+/* Link de navegação em Outfit Uppercase refinado */
+.nav-menu-link {
+  display: block;
+  padding: 0.45rem var(--space-md);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-primary);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* Estado hover do link de navegação */
+.nav-menu-link:hover {
+  color: var(--color-text-light);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Link ativo (seção atual visível na tela) — controlado pelo JS */
+.nav-menu-link.is-active {
+  color: var(--color-telha);
+  background-color: rgba(192, 106, 44, 0.15);
+}
+
+/* Linha sublinhada animada ao passar o mouse */
+.nav-menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: var(--color-telha);
+  border-radius: var(--radius-full);
+  transition: left var(--transition-fast),
+              right var(--transition-fast);
+}
+
+.nav-menu-link:hover::after,
+.nav-menu-link.is-active::after {
+  left: var(--space-md);
+  right: var(--space-md);
+}
+
+/* ── AÇÕES DO CABEÇALHO (Ícones sociais) ─────────────────── */
+/* Grupo de ícones no lado direito do cabeçalho */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* Link de ícone social no cabeçalho */
+.header-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.header-social-link:hover {
+  color: var(--color-text-light);
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Ícone SVG dentro do link social */
+.header-social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ── BOTÃO HAMBÚRGUER (Mobile) ───────────────────────────── */
+/* Visível apenas em telas menores que 768px */
+.header-menu-toggle {
+  display: none; /* Escondido por padrão (desktop) */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  /* Zona de toque ampliada para acessibilidade mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* As três barras do ícone hambúrguer */
+.header-menu-toggle .toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-light);
+  border-radius: var(--radius-full);
+  transform-origin: left center;
+  transition: transform var(--transition-normal),
+              opacity var(--transition-normal),
+              width var(--transition-normal);
+}
+
+/* Animação do hambúrguer para "X" quando o menu está aberto */
+.site-header.menu-is-open .toggle-bar:nth-child(1) {
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.site-header.menu-is-open .toggle-bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.site-header.menu-is-open .toggle-bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(1px);
+}
+
+/* ── MENU MOBILE (Dropdown) ──────────────────────────────── */
+/* Painel de navegação que aparece no mobile ao clicar no hambúrguer */
+.nav-mobile-panel {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-lg) var(--container-padding);
+  /* Animação de entrada/saída */
+  transform: translateY(-110%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform var(--transition-normal),
+              opacity var(--transition-normal),
+              visibility var(--transition-normal);
+  z-index: 999;
+  /* Sombra inferior */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estado aberto do painel mobile — ativado pelo JS */
+.site-header.menu-is-open + .nav-mobile-panel,
+.nav-mobile-panel.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Lista de itens no menu mobile */
+.nav-mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Link individual no menu mobile */
+.nav-mobile-link {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast),
+              padding-left var(--transition-fast);
+}
+
+.nav-mobile-link:hover {
+  color: var(--color-accent);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-left: calc(var(--space-lg) + var(--space-sm));
+}
+
+/* Separador e ícones sociais na parte inferior do menu mobile */
+.nav-mobile-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* ── RESPONSIVIDADE ──────────────────────────────────────── */
+/* Em telas menores que 900px, a navegação desktop é substituída
+   pelo botão hambúrguer */
+@media (max-width: 900px) {
+  .header-nav {
+    display: none; /* Esconde o menu desktop */
+  }
+
+  .header-actions {
+    display: none; /* Esconde ações no mobile (reaparecem no painel) */
+  }
+
+  .header-menu-toggle {
+    display: flex; /* Exibe o botão hambúrguer */
+  }
+}
+
+/* Espaçamento do logo em telas muito pequenas */
+@media (max-width: 480px) {
+  .header-logo img {
+    height: 36px;
+  }
+}

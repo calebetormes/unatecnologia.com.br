@@ -1,0 +1,30 @@
+/*
+ * ============================================================
+ * main.css — Arquivo Principal de CSS (Importador de Módulos)
+ * ============================================================
+ * Este arquivo NÃO contém estilos diretos.
+ * Ele apenas importa todos os módulos CSS na ordem correta.
+ *
+ * ORDEM DE IMPORTAÇÃO (importante!):
+ *   1. base.css       — Deve vir primeiro (reset + variáveis)
+ *   2. header.css     — Cabeçalho usa variáveis do base.css
+ *   3. footer.css     — Rodapé usa variáveis do base.css
+ *   4. components.css — Componentes usam tudo dos anteriores
+ *
+ * Para adicionar um novo módulo CSS:
+ *   1. Crie o arquivo em /css/meu-modulo.css
+ *   2. Adicione @import './meu-modulo.css'; abaixo
+ * ============================================================
+ */
+
+/* ── Módulo 1: Fundação (variáveis, reset, tipografia) ───── */
+@import './base.css';
+
+/* ── Módulo 2: Cabeçalho e navegação ─────────────────────── */
+@import './header.css';
+
+/* ── Módulo 3: Rodapé ─────────────────────────────────────── */
+@import './footer.css';
+
+/* ── Módulo 4: Componentes e seções da página ─────────────── */
+@import './components.css';

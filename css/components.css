@@ -1,0 +1,1416 @@
+﻿/*
+ * ============================================================
+ * components.css — Componentes Reutilizáveis da UI
+ * ============================================================
+ * Este arquivo define os blocos de construção visuais do site:
+ *   - Botões (primário, secundário, outline)
+ *   - Cards de modelos de casas
+ *   - Badges e etiquetas
+ *   - Seções genéricas (espaçamento, títulos)
+ *   - Seção Hero/Banner principal
+ *   - Seção Sobre Nós
+ *   - Grid de modelos
+ *   - Lightbox de imagens
+ *   - Carrossel de galeria
+ *   - Seção Memorial Descritivo
+ *   - Formulário de contato
+ *   - Animações de entrada (scroll reveal)
+ * ============================================================
+ */
+
+/* ──────────────────────────────────────────────────────────
+ * BOTÕES
+ * ──────────────────────────────────────────────────────────
+ * Família de botões com variantes: primário, accent, outline.
+ */
+
+/* Base comum de todos os botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.75em 1.75em;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  /* Evita seleção de texto acidental ao clicar */
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Botão primário: fundo Telha (#C06A2C) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 14px rgba(192, 106, 44, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 6px 20px rgba(140, 69, 27, 0.45);
+}
+
+/* Botão accent: fundo Telha — principal CTA */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 14px rgba(192, 106, 44, 0.4);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 6px 20px rgba(140, 69, 27, 0.5);
+}
+
+/* Botão outline: fundo transparente com borda Telha */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+/* Botão outline claro: para uso em fundos escuros */
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-carbono);
+  border-color: var(--color-text-light);
+}
+
+/* Botão WhatsApp (verde específico da marca) */
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1fba59;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+/* Tamanhos de botão */
+.btn-sm {
+  padding: 0.5em 1.25em;
+  font-size: var(--text-xs);
+}
+
+.btn-lg {
+  padding: 1em 2.5em;
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+}
+
+/* ──────────────────────────────────────────────────────────
+ * ESTRUTURA DE SEÇÕES
+ * ──────────────────────────────────────────────────────────
+ * Cada seção ocupa 100% do espaço vertical da tela (100vh / 100svh),
+ * com conteúdo perfeitamente centralizado verticalmente.
+ */
+.site-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(3rem, 6vh, 5rem);
+  box-sizing: border-box;
+}
+
+/* Seção com fundo alternado (Off-White oficial da marca) */
+.site-section--alt {
+  background-color: var(--color-bg-light);
+}
+
+/* Seção com fundo escuro (Carbono oficial da marca) */
+.site-section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+/* Cabeçalho de seção: badge + título + subtítulo */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+/* Badge colorido acima do título da seção (Telha) */
+.section-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-lg);
+  background-color: rgba(192, 106, 44, 0.12);
+  color: var(--color-telha);
+  border: 1px solid rgba(192, 106, 44, 0.3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+/* Título principal da seção em Outfit Extrabold / Caixa Alta */
+.section-title {
+  font-family: var(--font-primary);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+/* Título em modo escuro */
+.site-section--dark .section-title {
+  color: var(--color-text-light);
+}
+
+/* Subtítulo / descrição da seção */
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+.site-section--dark .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ──────────────────────────────────────────────────────────
+ * SEÇÃO HERO (Banner Principal — Design idêntico à imagem)
+ * ──────────────────────────────────────────────────────────
+ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--header-height);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+/* Fundo do Hero: blueprint com nitidez */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/hero/header-bg.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  image-rendering: -webkit-optimize-contrast;
+  z-index: 1;
+}
+
+/* Camada translúcida e grid arquitetônico com animação ultra suave por GPU */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: rgba(247, 246, 242, 0.42); /* Off-white com transparência */
+  backdrop-filter: blur(0.5px);
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  right: -120px;
+  bottom: -120px;
+  width: calc(100% + 240px);
+  height: calc(100% + 240px);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.hero-grid-pattern--primary {
+  background-image:
+    linear-gradient(to right, rgba(192, 106, 44, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(192, 106, 44, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: hero-grid-smooth-flow 70s linear infinite;
+}
+
+.hero-grid-pattern--sub {
+  background-image:
+    linear-gradient(to right, rgba(46, 46, 46, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 46, 46, 0.035) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: hero-subgrid-smooth-flow 110s linear infinite;
+}
+
+@keyframes hero-grid-smooth-flow {
+  0% { transform: translate3d(0px, 0px, 0); }
+  100% { transform: translate3d(60px, 60px, 0); }
+}
+
+@keyframes hero-subgrid-smooth-flow {
+  0% { transform: translate3d(0px, 0px, 0); }
+  100% { transform: translate3d(-60px, -60px, 0); }
+}
+
+/* Contêiner com alinhamento à direita */
+.hero-brand-container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-brand-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+  gap: 1.25rem;
+  margin-right: clamp(0rem, 5vw, 4rem);
+}
+
+/* Ícone no Hero */
+.hero-brand-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-brand-icon {
+  width: clamp(105px, 14vw, 155px);
+  height: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  transition: transform var(--transition-normal);
+}
+
+.hero-brand-icon:hover {
+  transform: scale(1.04);
+}
+
+/* Título em Caixa Alta e tom Telha */
+.hero-brand-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--color-telha); /* #C06A2C */
+  margin: 0;
+}
+
+/* Botão CTA Telha com bordas arredondadas e texto branco */
+.hero-brand-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-hero-brand-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-telha); /* #C06A2C */
+  color: #ffffff !important;
+  font-family: var(--font-primary);
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  font-weight: 700;
+  padding: 0.75rem 1.65rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(192, 106, 44, 0.35);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-hero-brand-cta:hover {
+  background-color: var(--color-terra); /* #8C451B */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(140, 69, 27, 0.45);
+  color: #ffffff;
+}
+
+/* Recorte angular inclinado na base do Hero com a cor da seção seguinte (#383838) */
+.hero-bottom-slant {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(35px, 6vw, 70px);
+  background-color: #383838;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  z-index: 3;
+}
+
+@media (max-width: 900px) {
+  .hero-brand-container {
+    justify-content: center;
+  }
+  .hero-brand-content {
+    margin-right: 0;
+    max-width: 100%;
+    background: rgba(247, 246, 242, 0.85);
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+ * SEÇÃO SOBRE NÓS (Layout idêntico à imagem de referência)
+ * ──────────────────────────────────────────────────────────
+ */
+.about-brand-section {
+  background-color: #383838; /* Chumbo base da identidade visual */
+  padding-block: clamp(4rem, 7vw, 6.5rem);
+  color: #ffffff;
+}
+
+.about-brand-container {
+  max-width: 1100px;
+}
+
+.about-brand-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+/* Coluna 1: Símbolo / Ícone da casa */
+.about-brand-icon-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-brand-symbol {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+  transition: transform var(--transition-normal);
+}
+
+.about-brand-symbol:hover {
+  transform: scale(1.03);
+}
+
+/* Coluna 2: Textos */
+.about-brand-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.about-brand-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-telha); /* #C06A2C - Laranja Telha / Terracota */
+  margin: 0;
+}
+
+.about-brand-main-text p {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.9rem, 1.5vw, 0.975rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: justify;
+  margin: 0;
+}
+
+/* Bloco de Missão */
+.about-brand-mission-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.about-mission-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  color: var(--color-telha); /* #C06A2C */
+  margin: 0;
+}
+
+.about-mission-description {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.78rem, 1.3vw, 0.85rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-brand-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-2xl);
+  }
+  .about-brand-symbol {
+    max-width: 190px;
+  }
+  .about-brand-title {
+    text-align: center;
+  }
+  .about-brand-main-text p {
+    text-align: left;
+  }
+  .about-brand-mission-block {
+    text-align: left;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+ * GRID DE MODELOS DE CASAS
+ * ──────────────────────────────────────────────────────────
+ * Exibe os modelos disponíveis em cards organizados em grid.
+ */
+
+/* Filtro de tipos de telhado (badges clicáveis) */
+.models-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-3xl);
+}
+
+.models-filter-btn {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.models-filter-btn:hover,
+.models-filter-btn.is-active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* ── CARDS DE MODELOS DE CASAS (Layout compacto em 3 colunas) ─────────────── */
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  justify-content: center;
+}
+
+/* Card individual com visual limpo, compacto e minimalista */
+.model-brand-card {
+  background-color: #F7F6F2; /* Off-white de fundo idêntico à imagem */
+  border-radius: 16px;
+  padding: clamp(1.25rem, 2.2vw, 1.65rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.model-brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabeçalho do Card: HP 32 + Modelo de Fachada + Área */
+.model-brand-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.model-brand-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #2E2E2E; /* Chumbo escuro */
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.model-brand-type {
+  font-family: var(--font-primary);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 700;
+  color: var(--color-telha); /* #C06A2C Terracota */
+  margin: 0;
+}
+
+.model-brand-area {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  color: #4A4A4A;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Galeria com duas fachadas e miniatura da planta centralizada sobreposta */
+.model-brand-gallery {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.model-facade-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.model-facade-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+.model-facade-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.model-facade-img-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* Miniatura da Planta Baixa com contorno e borda arredondada terracota */
+.model-floorplan-badge {
+  position: relative;
+  width: clamp(100px, 32%, 125px);
+  aspect-ratio: 1 / 1;
+  background-color: #ffffff;
+  border: 2px solid var(--color-telha); /* Borda em Terracota #C06A2C */
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin-top: -45px; /* Sobrepõe sutilmente a parte inferior das fachadas */
+  z-index: 5;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.model-floorplan-badge:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 22px rgba(192, 106, 44, 0.35);
+}
+
+.model-floorplan-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Botão CTA para Orçamento WhatsApp em Terracota Oficial */
+.model-brand-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.btn-model-brand-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background-color: var(--color-telha); /* #C06A2C Cor exata da referência */
+  color: #ffffff !important;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(192, 106, 44, 0.3);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-model-brand-cta svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.btn-model-brand-cta:hover {
+  background-color: var(--color-terra); /* #8C451B tom terracota escurecido */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(140, 69, 27, 0.4);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .models-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+  .model-brand-card {
+    padding: 1.25rem 1rem;
+  }
+  .model-floorplan-badge {
+    width: 110px;
+    margin-top: -40px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+ * LIGHTBOX (Visualizador de Imagem em Tela Cheia)
+ * ──────────────────────────────────────────────────────────
+ * Abre ao clicar em uma imagem dos cards de modelos.
+ */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  /* Estado: fechado por padrão */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal),
+              visibility var(--transition-normal);
+}
+
+/* Estado aberto do lightbox — ativado por JS */
+.lightbox-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Imagem exibida no lightbox */
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform var(--transition-normal);
+}
+
+.lightbox-overlay.is-active .lightbox-image {
+  transform: scale(1);
+}
+
+/* Botão de fechar o lightbox */
+.lightbox-close-btn {
+  position: absolute;
+  top: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.lightbox-close-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ──────────────────────────────────────────────────────────
+ * SEÇÃO 5: GALERIA DE IMAGENS (Layout fiel à imagem de referência)
+ * ──────────────────────────────────────────────────────────
+ */
+.gallery-section {
+  background-color: #383838; /* Chumbo profundo idêntico à imagem de referência */
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.gallery-container {
+  max-width: 1200px;
+}
+
+/* Cabeçalho centralizado com título em terracota */
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.gallery-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-telha); /* #C06A2C - Laranja Telha / Terracota idêntico à imagem */
+}
+
+/* Container do Carrossel */
+.gallery-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Faixa de slides do carrossel */
+.gallery-track {
+  display: flex;
+  gap: clamp(12px, 1.8vw, 20px);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Cada slide do carrossel com cantos bem arredondados como na imagem */
+.gallery-slide {
+  flex: 0 0 calc(33.333% - clamp(8px, 1.2vw, 14px));
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background-color: #2b2b2b;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform var(--transition-normal);
+}
+
+.gallery-slide:hover img {
+  transform: scale(1.04);
+}
+
+/* Botões de navegação sutis (chevron discreto na lateral) */
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%) scale(1.1);
+  color: #ffffff;
+}
+
+.gallery-nav-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.gallery-nav-btn--prev { left: var(--space-sm); }
+.gallery-nav-btn--next { right: var(--space-sm); }
+
+/* Bolinhas de paginação circulares discretas */
+.gallery-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-xl);
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-dot.is-active {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 7px;
+}
+
+/* ──────────────────────────────────────────────────────────
+ * SEÇÃO MEMORIAL DESCRITIVO (Layout idêntico à imagem)
+ * ──────────────────────────────────────────────────────────
+ */
+.memorial-section {
+  position: relative;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background-color: var(--color-carbono);
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Fundo com a imagem do memorial e overlay escuro de alto contraste */
+.memorial-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/memorial/memorial-descritivo-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.28) contrast(1.15);
+  opacity: 0.88;
+  z-index: 1;
+}
+
+.memorial-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(46, 46, 46, 0.4) 0%, rgba(26, 26, 26, 0.85) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.memorial-container {
+  position: relative;
+  z-index: 5;
+  max-width: 960px;
+}
+
+/* Cabeçalho centralizado */
+.memorial-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.memorial-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.memorial-subtitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.95rem, 1.8vw, 1.0625rem);
+  font-weight: 600;
+  color: var(--color-telha); /* Terracota / Telha da identidade visual */
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Caixa com a lista de itens */
+.memorial-box-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-xl);
+}
+
+.memorial-card-info {
+  background-color: transparent;
+  max-width: 480px;
+  width: 100%;
+}
+
+.memorial-box-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: var(--space-lg);
+  line-height: 1.4;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Lista com bullets redondos */
+.memorial-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: var(--space-2xl);
+}
+
+.memorial-items-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-family: var(--font-secondary);
+  font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.memorial-items-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Botão de download alinhado e destacado */
+.memorial-action-center {
+  display: flex;
+  margin-top: var(--space-md);
+}
+
+.btn-memorial-download {
+  background-color: var(--color-telha);
+  color: #ffffff;
+  padding: 0.85rem 1.8rem;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(192, 106, 44, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-memorial-download:hover {
+  background-color: var(--color-terra);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 69, 27, 0.5);
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .memorial-box-wrapper {
+    justify-content: center;
+  }
+  .memorial-card-info {
+    max-width: 540px;
+    background: rgba(26, 26, 26, 0.4);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(4px);
+  }
+  .memorial-action-center {
+    justify-content: center;
+  }
+  .btn-memorial-download {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+ * SEÇÃO 6: CONTATO & BRANDING (Layout idêntico à imagem)
+ * ──────────────────────────────────────────────────────────
+ */
+.contact-brand-section {
+  position: relative;
+  background-color: #383838; /* Chumbo base idêntico à imagem */
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Faixa superior com a imagem de blueprint e logo UNA com efeito janela (fixed parallax) */
+.contact-blueprint-strip {
+  position: relative;
+  width: 100%;
+  min-height: clamp(240px, 32vw, 360px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Inclinação vertical suave no topo e na base estilo janela arquitetônica */
+  clip-path: polygon(0 0, 100% 4%, 100% 96%, 0 100%);
+  margin-top: -15px;
+  z-index: 4;
+}
+
+.contact-blueprint-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/hero/header-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Efeito janela fixa enquanto rola a página */
+  filter: grayscale(100%) contrast(1.15) brightness(0.42);
+}
+
+.contact-blueprint-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 30, 30, 0.55);
+}
+
+.contact-blueprint-logo {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-blueprint-logo img {
+  height: clamp(48px, 7vw, 75px);
+  width: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+}
+
+/* Área principal de contato com transição suave */
+.contact-main-body {
+  position: relative;
+  background-color: #383838;
+  padding-top: clamp(3rem, 5.5vw, 5rem);
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  margin-top: -20px;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .contact-blueprint-strip {
+    min-height: 200px;
+    clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
+    margin-top: 0;
+  }
+  .contact-blueprint-bg {
+    background-attachment: scroll; /* Suporte suave em dispositivos touch */
+  }
+  .contact-main-body {
+    margin-top: 0;
+  }
+}
+
+.contact-brand-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* Coluna Esquerda: Badge Minha Casa Minha Vida */
+.contact-mcmv-badge-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: clamp(1rem, 4vw, 3rem);
+}
+
+.mcmv-pill-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.mcmv-pill-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.mcmv-pill-card img {
+  height: clamp(52px, 8vw, 76px);
+  width: auto;
+}
+
+/* Coluna Central/Direita: Ícone Casa UNA, Endereço, Telefones, Email e Redes Sociais */
+.contact-brand-info-col {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  color: #ffffff;
+}
+
+.contact-brand-icon {
+  margin-bottom: var(--space-xs);
+}
+
+.contact-brand-icon img {
+  height: clamp(60px, 9vw, 84px);
+  width: auto;
+}
+
+.contact-brand-address {
+  font-family: var(--font-secondary);
+  font-style: normal;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-brand-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-brand-phones a {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.875rem, 1.6vw, 0.95rem);
+  font-weight: 600;
+  color: #ffffff;
+  transition: color var(--transition-fast);
+}
+
+.contact-brand-phones a:hover {
+  color: var(--color-telha);
+}
+
+.contact-brand-email a {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.85rem, 1.6vw, 0.925rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color var(--transition-fast);
+}
+
+.contact-brand-email a:hover {
+  color: var(--color-telha);
+}
+
+/* Ícones sociais circulares em terracota como na imagem */
+.contact-brand-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.brand-social-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-telha); /* #C06A2C - Laranja Terracota idêntico à imagem */
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(192, 106, 44, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.brand-social-circle:hover {
+  background-color: var(--color-terra); /* #8C451B */
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(140, 69, 27, 0.5);
+  color: #ffffff;
+}
+
+.brand-social-circle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .contact-brand-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: var(--space-2xl);
+  }
+  .contact-mcmv-badge-col {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+ * ANIMAÇÕES DE ENTRADA (Scroll Reveal)
+ * ──────────────────────────────────────────────────────────
+ * Elementos aparecem suavemente ao entrar na viewport.
+ * A classe .is-revealed é adicionada pelo IntersectionObserver
+ * no arquivo main.js.
+ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease,
+              transform 0.6s ease;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Atraso escalonado para grupos de elementos */
+.reveal-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.reveal-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.reveal-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.reveal-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.reveal-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+
+/* ──────────────────────────────────────────────────────────
+ * RESPONSIVIDADE GERAL DOS COMPONENTES
+ * ──────────────────────────────────────────────────────────
+ */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about-image-wrapper {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  .memorial-content {
+    flex-direction: column;
+  }
+
+  .memorial-banner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-section {
+    padding-block: var(--space-3xl);
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-slide {
+    flex: 0 0 calc(50% - var(--space-md));
+  }
+
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-slide {
+    flex: 0 0 calc(100% - var(--space-md));
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-lg);
+  }
+}
