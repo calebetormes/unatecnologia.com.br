@@ -1,0 +1,42 @@
+# robots.txt para UNA Tecnologia em Casas (https://unatecnologia.com.br)
+# Permite indexação completa para Google, Bing e Rastreadores de IA (SearchGPT, Claude, Gemini, Perplexity)
+
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /.system_generated/
+
+# Motores de Busca Principais
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Rastreadores de Inteligência Artificial & LLMs (GEO / SEO para IA)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap
+Sitemap: https://unatecnologia.com.br/sitemap.xml
