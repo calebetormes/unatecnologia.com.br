@@ -124,32 +124,29 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* ── BOTÃO FLUTUANTE DO WHATSAPP ─────────────────────────── */
-/*
- * Botão fixo no canto inferior direito que leva ao WhatsApp.
- * É o principal canal de contato rápido do site.
- */
+/* ── BOTÃO FLUTUANTE DO WHATSAPP (Touch Target Mobile) ─────────────────────────── */
 .whatsapp-float-btn {
   position: fixed;
-  bottom: var(--space-xl);
-  right: var(--space-xl);
+  bottom: var(--space-lg); /* 20px */
+  right: var(--space-lg);  /* 20px */
   z-index: 900;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
+  min-height: 48px;
+  padding: 12px 20px;
   background-color: #25d366; /* Verde oficial do WhatsApp */
   color: white;
   border-radius: var(--radius-full);
   font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-size: var(--text-base); /* 16px */
+  font-weight: 700;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   transition: transform var(--transition-fast),
               box-shadow var(--transition-fast),
               background-color var(--transition-fast);
-  /* Pulsação inicial para chamar atenção */
   animation: whatsapp-pulse 2s ease-in-out 2s 3;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .whatsapp-float-btn:hover {
@@ -171,43 +168,33 @@
   50%       { transform: scale(1.08); }
 }
 
-/* Em telas muito pequenas, o texto do botão é ocultado */
+/* Em telas de smartphone (<480px) */
 @media (max-width: 480px) {
   .whatsapp-float-btn span {
     display: none;
   }
   .whatsapp-float-btn {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
+    min-height: 52px;
     padding: 0;
     justify-content: center;
     border-radius: var(--radius-full);
+    bottom: 16px;
+    right: 16px;
   }
 }
 
 /* ── RESPONSIVIDADE DO RODAPÉ ────────────────────────────── */
-/* Em tablets, o grid passa a duas colunas */
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-  }
-}
-
-/* Em mobile, uma única coluna empilhada */
-@media (max-width: 600px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-
+@media (max-width: 768px) {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-sm);
+    padding-block: var(--space-lg);
   }
-
-  .whatsapp-float-btn {
-    bottom: var(--space-lg);
-    right: var(--space-lg);
+  .footer-copyright {
+    font-size: var(--text-sm); /* 14px */
+    line-height: 1.5;
   }
 }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * ============================================================
  * components.css — Componentes Reutilizáveis da UI
  * ============================================================
@@ -19,34 +19,34 @@
  */
 
 /* ──────────────────────────────────────────────────────────
- * BOTÕES
+ * BOTÕES (Padronização Mobile Touch Target 48px)
  * ──────────────────────────────────────────────────────────
- * Família de botões com variantes: primário, accent, outline.
  */
 
-/* Base comum de todos os botões */
+/* Base comum de todos os botões (Acessibilidade Mobile Touch 48px) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: 0.75em 1.75em;
+  min-height: 48px; /* Altura mínima para toque de dedo */
+  padding: 12px 24px; /* Padding padrão mobile (vertical / horizontal) */
   border: 2px solid transparent;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-md); /* 8px */
   font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: var(--text-base); /* 16px */
+  font-weight: 700;
+  letter-spacing: 0.02em;
   cursor: pointer;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   transition: background-color var(--transition-fast),
               border-color var(--transition-fast),
               color var(--transition-fast),
               transform var(--transition-fast),
               box-shadow var(--transition-fast);
-  /* Evita seleção de texto acidental ao clicar */
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn:hover {
@@ -113,7 +113,7 @@
   border-color: var(--color-text-light);
 }
 
-/* Botão WhatsApp (verde específico da marca) */
+/* Botão WhatsApp */
 .btn-whatsapp {
   background-color: #25d366;
   color: white;
@@ -127,14 +127,23 @@
 
 /* Tamanhos de botão */
 .btn-sm {
-  padding: 0.5em 1.25em;
-  font-size: var(--text-xs);
+  min-height: 44px;
+  padding: 10px 18px;
+  font-size: var(--text-sm);
 }
 
 .btn-lg {
-  padding: 1em 2.5em;
+  min-height: 52px;
+  padding: 14px 28px;
   font-size: var(--text-base);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -194,7 +203,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--color-text-primary);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: var(--space-md);
 }
 
@@ -209,15 +218,15 @@
   color: var(--color-text-secondary);
   max-width: 680px;
   margin-inline: auto;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .site-section--dark .section-subtitle {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ──────────────────────────────────────────────────────────
- * SEÇÃO HERO (Banner Principal — Design idêntico à imagem)
+ * SEÇÃO HERO (Banner Principal — Mobile-First)
  * ──────────────────────────────────────────────────────────
  */
 .hero-section {
@@ -251,7 +260,7 @@
   z-index: 2;
   overflow: hidden;
   pointer-events: none;
-  background-color: rgba(247, 246, 242, 0.42); /* Off-white com transparência */
+  background-color: rgba(247, 246, 242, 0.42);
   backdrop-filter: blur(0.5px);
 }
 
@@ -271,18 +280,18 @@
 
 .hero-grid-pattern--primary {
   background-image:
-    linear-gradient(to right, rgba(192, 106, 44, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(192, 106, 44, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(192, 106, 44, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(192, 106, 44, 0.09) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: hero-grid-smooth-flow 70s linear infinite;
+  animation: hero-grid-smooth-flow 28s linear infinite;
 }
 
 .hero-grid-pattern--sub {
   background-image:
-    linear-gradient(to right, rgba(46, 46, 46, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(46, 46, 46, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(46, 46, 46, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 46, 46, 0.04) 1px, transparent 1px);
   background-size: 20px 20px;
-  animation: hero-subgrid-smooth-flow 110s linear infinite;
+  animation: hero-subgrid-smooth-flow 45s linear infinite;
 }
 
 @keyframes hero-grid-smooth-flow {
@@ -311,7 +320,7 @@
   align-items: center;
   text-align: center;
   max-width: 480px;
-  gap: 1.25rem;
+  gap: var(--space-md); /* 16px */
   margin-right: clamp(0rem, 5vw, 4rem);
 }
 
@@ -323,7 +332,7 @@
 }
 
 .hero-brand-icon {
-  width: clamp(105px, 14vw, 155px);
+  width: clamp(95px, 16vw, 150px);
   height: auto;
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
   transition: transform var(--transition-normal);
@@ -333,23 +342,24 @@
   transform: scale(1.04);
 }
 
-/* Título em Caixa Alta e tom Telha */
+/* Título em Caixa Alta e tom Telha (H1: 28px a 32px no mobile) */
 .hero-brand-title {
   font-family: var(--font-primary);
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-size: var(--text-3xl); /* 28px no mobile → 40px no desktop */
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.3;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   color: var(--color-telha); /* #C06A2C */
   margin: 0;
 }
 
-/* Botão CTA Telha com bordas arredondadas e texto branco */
+/* Botão CTA Telha com Touch Target Mobile (min-height: 48px, 12px 24px) */
 .hero-brand-actions {
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
+  width: 100%;
+  margin-top: var(--space-sm);
 }
 
 .btn-hero-brand-cta {
@@ -359,13 +369,16 @@
   background-color: var(--color-telha); /* #C06A2C */
   color: #ffffff !important;
   font-family: var(--font-primary);
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  font-size: var(--text-base); /* 16px */
   font-weight: 700;
-  padding: 0.75rem 1.65rem;
-  border-radius: 6px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
   box-shadow: 0 4px 14px rgba(192, 106, 44, 0.35);
   transition: all var(--transition-fast);
   text-decoration: none;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-hero-brand-cta:hover {
@@ -375,13 +388,13 @@
   color: #ffffff;
 }
 
-/* Recorte angular inclinado na base do Hero com a cor da seção seguinte (#383838) */
+/* Recorte angular inclinado na base do Hero */
 .hero-bottom-slant {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: clamp(35px, 6vw, 70px);
+  height: clamp(32px, 5vw, 65px);
   background-color: #383838;
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
   z-index: 3;
@@ -394,20 +407,25 @@
   .hero-brand-content {
     margin-right: 0;
     max-width: 100%;
-    background: rgba(247, 246, 242, 0.85);
-    padding: 1.5rem;
-    border-radius: 16px;
-    backdrop-filter: blur(4px);
+    background: rgba(247, 246, 242, 0.92);
+    padding: var(--space-xl) var(--space-lg); /* 24px vertical, 20px lateral */
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+  .btn-hero-brand-cta {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
 /* ──────────────────────────────────────────────────────────
- * SEÇÃO SOBRE NÓS (Layout idêntico à imagem de referência)
+ * SEÇÃO SOBRE NÓS (Mobile-First)
  * ──────────────────────────────────────────────────────────
  */
 .about-brand-section {
-  background-color: #383838; /* Chumbo base da identidade visual */
-  padding-block: clamp(4rem, 7vw, 6.5rem);
+  background-color: #383838; /* Chumbo base */
+  padding-block: var(--space-3xl); /* 48px a 64px */
   color: #ffffff;
 }
 
@@ -418,7 +436,7 @@
 .about-brand-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.3fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
 }
 
@@ -445,26 +463,28 @@
 .about-brand-text-col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg); /* 20px */
 }
 
+/* Título H2: 22px a 24px no mobile (line-height: 1.3) */
 .about-brand-title {
   font-family: var(--font-primary);
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-size: var(--text-2xl); /* 22px mobile → 32px desktop */
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-telha); /* #C06A2C - Laranja Telha / Terracota */
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--color-telha); /* #C06A2C */
   margin: 0;
 }
 
+/* Texto do Corpo (Body / P): 16px (line-height: 1.6) */
 .about-brand-main-text p {
   font-family: var(--font-secondary);
-  font-size: clamp(0.9rem, 1.5vw, 0.975rem);
+  font-size: var(--text-base); /* 16px */
   font-weight: 400;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: justify;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
   margin: 0;
 }
 
@@ -475,20 +495,23 @@
   gap: var(--space-xs);
 }
 
+/* Subtítulo H3: 18px a 20px no mobile (line-height: 1.4) */
 .about-mission-heading {
   font-family: var(--font-primary);
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-size: var(--text-lg); /* 18px mobile → 20px desktop */
   font-weight: 700;
+  line-height: 1.4;
   color: var(--color-telha); /* #C06A2C */
   margin: 0;
 }
 
+/* Texto Secundário: 14px (line-height: 1.4) */
 .about-mission-description {
   font-family: var(--font-secondary);
-  font-size: clamp(0.78rem, 1.3vw, 0.85rem);
+  font-size: var(--text-sm); /* 14px */
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }
 
@@ -496,10 +519,10 @@
   .about-brand-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: var(--space-2xl);
+    gap: var(--space-xl); /* 24px */
   }
   .about-brand-symbol {
-    max-width: 190px;
+    max-width: 170px;
   }
   .about-brand-title {
     text-align: center;
@@ -513,29 +536,28 @@
 }
 
 /* ──────────────────────────────────────────────────────────
- * GRID DE MODELOS DE CASAS
+ * GRID DE MODELOS DE CASAS (Mobile-First 1 Coluna / Desktop 3 Colunas)
  * ──────────────────────────────────────────────────────────
- * Exibe os modelos disponíveis em cards organizados em grid.
  */
 
-/* Filtro de tipos de telhado (badges clicáveis) */
 .models-filter {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
 }
 
 .models-filter-btn {
-  padding: var(--space-sm) var(--space-lg);
+  min-height: 44px;
+  padding: 10px 18px;
   background-color: transparent;
   color: var(--color-text-secondary);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-full);
   font-family: var(--font-primary);
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05em;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -548,20 +570,18 @@
   border-color: var(--color-primary);
 }
 
-/* ── CARDS DE MODELOS DE CASAS (Layout compacto em 3 colunas) ─────────────── */
-
 .models-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+  gap: var(--space-md); /* 16px gap padrão */
   justify-content: center;
 }
 
-/* Card individual com visual limpo, compacto e minimalista */
+/* Card individual */
 .model-brand-card {
-  background-color: #F7F6F2; /* Off-white de fundo idêntico à imagem */
-  border-radius: 16px;
-  padding: clamp(1.25rem, 2.2vw, 1.65rem);
+  background-color: #F7F6F2;
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg); /* 20px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -576,47 +596,48 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Cabeçalho do Card: HP 32 + Modelo de Fachada + Área */
+/* Cabeçalho do Card */
 .model-brand-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
   width: 100%;
 }
 
 .model-brand-title {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   font-weight: 800;
-  color: #2E2E2E; /* Chumbo escuro */
-  line-height: 1;
+  color: #2E2E2E;
+  line-height: 1.1;
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .model-brand-type {
   font-family: var(--font-primary);
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-size: var(--text-lg); /* 18px a 20px */
   font-weight: 700;
-  color: var(--color-telha); /* #C06A2C Terracota */
+  line-height: 1.3;
+  color: var(--color-telha);
   margin: 0;
 }
 
 .model-brand-area {
   font-family: var(--font-secondary);
-  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  font-size: var(--text-sm); /* 14px a 15px */
   color: #4A4A4A;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 
-/* Galeria com duas fachadas e miniatura da planta centralizada sobreposta */
+/* Galeria de Fachadas e Planta */
 .model-brand-gallery {
   position: relative;
   width: 100%;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--space-md);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -627,13 +648,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .model-facade-img-wrap {
   position: relative;
   aspect-ratio: 16 / 11;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   background-color: #e5e5e5;
@@ -651,17 +672,17 @@
   transform: scale(1.05);
 }
 
-/* Miniatura da Planta Baixa com contorno e borda arredondada terracota */
+/* Miniatura da Planta Baixa */
 .model-floorplan-badge {
   position: relative;
-  width: clamp(100px, 32%, 125px);
+  width: clamp(96px, 30%, 120px);
   aspect-ratio: 1 / 1;
   background-color: #ffffff;
-  border: 2px solid var(--color-telha); /* Borda em Terracota #C06A2C */
-  border-radius: 12px;
+  border: 2px solid var(--color-telha);
+  border-radius: var(--radius-lg);
   padding: 4px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  margin-top: -45px; /* Sobrepõe sutilmente a parte inferior das fachadas */
+  margin-top: -42px;
   z-index: 5;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -679,7 +700,7 @@
   border-radius: 8px;
 }
 
-/* Botão CTA para Orçamento WhatsApp em Terracota Oficial */
+/* Botão WhatsApp do Card (Touch Target 48px, 16px, 12px 24px) */
 .model-brand-footer {
   width: 100%;
   display: flex;
@@ -691,30 +712,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  background-color: var(--color-telha); /* #C06A2C Cor exata da referência */
+  gap: var(--space-sm);
+  background-color: var(--color-telha);
   color: #ffffff !important;
   font-family: var(--font-primary);
-  font-size: 0.85rem;
+  font-size: var(--text-base); /* 16px */
   font-weight: 700;
-  padding: 0.65rem 1.35rem;
-  border-radius: 7px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md); /* 8px */
   border: none;
   cursor: pointer;
   box-shadow: 0 3px 10px rgba(192, 106, 44, 0.3);
   transition: all var(--transition-fast);
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-model-brand-cta svg {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .btn-model-brand-cta:hover {
-  background-color: var(--color-terra); /* #8C451B tom terracota escurecido */
+  background-color: var(--color-terra);
   transform: translateY(-2px);
   box-shadow: 0 5px 16px rgba(140, 69, 27, 0.4);
   color: #ffffff;
@@ -726,50 +753,52 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .models-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    gap: var(--space-lg); /* 20px */
   }
   .model-brand-card {
-    padding: 1.25rem 1rem;
+    padding: var(--space-lg) var(--space-md); /* 20px vertical, 16px lateral */
+    max-width: 440px;
+    margin-inline: auto;
+    width: 100%;
   }
   .model-floorplan-badge {
     width: 110px;
     margin-top: -40px;
   }
+  .btn-model-brand-cta {
+    max-width: 320px;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────
- * LIGHTBOX (Visualizador de Imagem em Tela Cheia)
+ * LIGHTBOX (Visualizador de Imagem)
  * ──────────────────────────────────────────────────────────
- * Abre ao clicar em uma imagem dos cards de modelos.
  */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(0, 0, 0, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xl);
-  /* Estado: fechado por padrão */
+  padding: var(--space-md);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-normal),
-              visibility var(--transition-normal);
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
-/* Estado aberto do lightbox — ativado por JS */
 .lightbox-overlay.is-active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Imagem exibida no lightbox */
 .lightbox-image {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 95vw;
+  max-height: 85vh;
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -781,84 +810,81 @@
   transform: scale(1);
 }
 
-/* Botão de fechar o lightbox */
 .lightbox-close-btn {
   position: absolute;
-  top: var(--space-xl);
-  right: var(--space-xl);
-  width: 44px;
-  height: 44px;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
   border-radius: var(--radius-full);
   color: white;
   cursor: pointer;
-  transition: background-color var(--transition-fast),
-              transform var(--transition-fast);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lightbox-close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   transform: rotate(90deg);
 }
 
 .lightbox-close-btn svg {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   fill: currentColor;
 }
 
 /* ──────────────────────────────────────────────────────────
- * SEÇÃO 5: GALERIA DE IMAGENS (Layout fiel à imagem de referência)
+ * SEÇÃO 5: GALERIA DE IMAGENS (Mobile-First)
  * ──────────────────────────────────────────────────────────
  */
 .gallery-section {
-  background-color: #383838; /* Chumbo profundo idêntico à imagem de referência */
-  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  background-color: #383838;
+  padding-block: var(--space-3xl); /* 48px a 64px */
 }
 
 .gallery-container {
   max-width: 1200px;
 }
 
-/* Cabeçalho centralizado com título em terracota */
 .gallery-header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
 }
 
+/* Título H2 Galeria: 22px a 24px no mobile */
 .gallery-title {
   font-family: var(--font-primary);
-  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+  font-size: var(--text-2xl); /* 22px mobile → 32px desktop */
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-telha); /* #C06A2C - Laranja Telha / Terracota idêntico à imagem */
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--color-telha);
 }
 
-/* Container do Carrossel */
 .gallery-carousel {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
 }
 
-/* Faixa de slides do carrossel */
 .gallery-track {
   display: flex;
-  gap: clamp(12px, 1.8vw, 20px);
+  gap: var(--space-md); /* 16px */
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
 }
 
-/* Cada slide do carrossel com cantos bem arredondados como na imagem */
 .gallery-slide {
-  flex: 0 0 calc(33.333% - clamp(8px, 1.2vw, 14px));
+  flex: 0 0 calc(33.333% - 11px);
   aspect-ratio: 16 / 10;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -869,7 +895,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   transition: transform var(--transition-normal);
 }
 
@@ -877,77 +903,82 @@
   transform: scale(1.04);
 }
 
-/* Botões de navegação sutis (chevron discreto na lateral) */
 .gallery-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-full);
   color: #ffffff;
   cursor: pointer;
   transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gallery-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-50%) scale(1.1);
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.08);
 }
 
 .gallery-nav-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
-.gallery-nav-btn--prev { left: var(--space-sm); }
-.gallery-nav-btn--next { right: var(--space-sm); }
+.gallery-nav-btn--prev { left: var(--space-xs); }
+.gallery-nav-btn--next { right: var(--space-xs); }
 
-/* Bolinhas de paginação circulares discretas */
 .gallery-pagination {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
 }
 
 .gallery-dot {
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
+  padding: 0;
 }
 
 .gallery-dot.is-active {
-  background-color: rgba(255, 255, 255, 0.85);
-  width: 7px;
+  background-color: var(--color-telha);
+  width: 22px;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 768px) {
+  .gallery-slide {
+    flex: 0 0 calc(100% - var(--space-md)); /* 1 slide por tela no mobile */
+  }
 }
 
 /* ──────────────────────────────────────────────────────────
- * SEÇÃO MEMORIAL DESCRITIVO (Layout idêntico à imagem)
+ * SEÇÃO MEMORIAL DESCRITIVO (Mobile-First)
  * ──────────────────────────────────────────────────────────
  */
 .memorial-section {
   position: relative;
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: var(--space-3xl); /* 48px a 64px */
   background-color: var(--color-carbono);
   overflow: hidden;
   color: #ffffff;
 }
 
-/* Fundo com a imagem do memorial e overlay escuro de alto contraste */
 .memorial-bg {
   position: absolute;
   inset: 0;
@@ -975,39 +1006,40 @@
   max-width: 960px;
 }
 
-/* Cabeçalho centralizado */
 .memorial-header {
   text-align: center;
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
   max-width: 820px;
   margin-inline: auto;
 }
 
+/* Título H1/H2 Memorial */
 .memorial-title {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-size: var(--text-3xl); /* 28px mobile → 40px desktop */
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
   color: #ffffff;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Subtítulo Memorial (16px, line-height: 1.5) */
 .memorial-subtitle {
   font-family: var(--font-secondary);
-  font-size: clamp(0.95rem, 1.8vw, 1.0625rem);
+  font-size: var(--text-base); /* 16px */
   font-weight: 600;
-  color: var(--color-telha); /* Terracota / Telha da identidade visual */
-  line-height: 1.6;
+  line-height: 1.5;
+  color: var(--color-telha);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Caixa com a lista de itens */
 .memorial-box-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
 }
 
 .memorial-card-info {
@@ -1016,31 +1048,31 @@
   width: 100%;
 }
 
+/* Subtítulo H3: 18px a 20px */
 .memorial-box-heading {
   font-family: var(--font-primary);
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: var(--text-lg); /* 18px a 20px */
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: var(--space-lg);
   line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: var(--space-md);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Lista com bullets redondos */
 .memorial-items-list {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  margin-bottom: var(--space-2xl);
+  gap: 0.5rem;
+  margin-bottom: var(--space-xl);
 }
 
 .memorial-items-list li {
   position: relative;
   padding-left: 1.25rem;
   font-family: var(--font-secondary);
-  font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+  font-size: var(--text-base); /* 16px */
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.5;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
@@ -1050,27 +1082,33 @@
   position: absolute;
   left: 0;
   top: -1px;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.2rem;
+  color: var(--color-telha);
+  font-size: 1.3rem;
   line-height: 1;
 }
 
-/* Botão de download alinhado e destacado */
 .memorial-action-center {
   display: flex;
   margin-top: var(--space-md);
 }
 
 .btn-memorial-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-telha);
   color: #ffffff;
-  padding: 0.85rem 1.8rem;
+  min-height: 48px;
+  padding: 12px 24px;
   font-family: var(--font-primary);
-  font-size: 0.875rem;
+  font-size: var(--text-base); /* 16px */
   font-weight: 700;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md); /* 8px */
   box-shadow: 0 4px 16px rgba(192, 106, 44, 0.4);
   transition: all var(--transition-fast);
+  text-decoration: none;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-memorial-download:hover {
@@ -1085,42 +1123,41 @@
     justify-content: center;
   }
   .memorial-card-info {
-    max-width: 540px;
-    background: rgba(26, 26, 26, 0.4);
-    padding: var(--space-lg);
-    border-radius: var(--radius-md);
-    backdrop-filter: blur(4px);
+    max-width: 100%;
+    background: rgba(26, 26, 26, 0.65);
+    padding: var(--space-xl) var(--space-lg); /* 24px vertical, 20px lateral */
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   .memorial-action-center {
     justify-content: center;
   }
   .btn-memorial-download {
     width: 100%;
-    text-align: center;
+    max-width: 320px;
   }
 }
 
 /* ──────────────────────────────────────────────────────────
- * SEÇÃO 6: CONTATO & BRANDING (Layout idêntico à imagem)
+ * SEÇÃO 6: CONTATO & BRANDING (Mobile-First)
  * ──────────────────────────────────────────────────────────
  */
 .contact-brand-section {
   position: relative;
-  background-color: #383838; /* Chumbo base idêntico à imagem */
+  background-color: #383838;
   padding: 0;
   overflow: hidden;
 }
 
-/* Faixa superior com a imagem de blueprint e logo UNA com efeito janela (fixed parallax) */
 .contact-blueprint-strip {
   position: relative;
   width: 100%;
-  min-height: clamp(240px, 32vw, 360px);
+  min-height: clamp(200px, 30vw, 340px);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Inclinação vertical suave no topo e na base estilo janela arquitetônica */
   clip-path: polygon(0 0, 100% 4%, 100% 96%, 0 100%);
   margin-top: -15px;
   z-index: 4;
@@ -1133,59 +1170,45 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Efeito janela fixa enquanto rola a página */
+  background-attachment: fixed;
   filter: grayscale(100%) contrast(1.15) brightness(0.42);
 }
 
 .contact-blueprint-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 30, 30, 0.55);
+  background-color: rgba(46, 46, 46, 0.35);
+  z-index: 2;
 }
 
 .contact-blueprint-logo {
   position: relative;
-  z-index: 5;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .contact-blueprint-logo img {
-  height: clamp(48px, 7vw, 75px);
+  height: clamp(44px, 7vw, 75px);
   width: auto;
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
 }
 
-/* Área principal de contato com transição suave */
 .contact-main-body {
   position: relative;
   background-color: #383838;
-  padding-top: clamp(3rem, 5.5vw, 5rem);
-  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
   margin-top: -20px;
   z-index: 10;
-}
-
-@media (max-width: 768px) {
-  .contact-blueprint-strip {
-    min-height: 200px;
-    clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
-    margin-top: 0;
-  }
-  .contact-blueprint-bg {
-    background-attachment: scroll; /* Suporte suave em dispositivos touch */
-  }
-  .contact-main-body {
-    margin-top: 0;
-  }
 }
 
 .contact-brand-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3xl);
+  gap: var(--space-2xl);
   max-width: 1100px;
   margin-inline: auto;
 }
@@ -1205,7 +1228,7 @@
   justify-content: center;
   background-color: #ffffff;
   padding: 12px 20px;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -1216,11 +1239,11 @@
 }
 
 .mcmv-pill-card img {
-  height: clamp(52px, 8vw, 76px);
+  height: clamp(48px, 8vw, 76px);
   width: auto;
 }
 
-/* Coluna Central/Direita: Ícone Casa UNA, Endereço, Telefones, Email e Redes Sociais */
+/* Coluna Central/Direita */
 .contact-brand-info-col {
   flex: 1.5;
   display: flex;
@@ -1236,16 +1259,17 @@
 }
 
 .contact-brand-icon img {
-  height: clamp(60px, 9vw, 84px);
+  height: clamp(56px, 9vw, 84px);
   width: auto;
 }
 
+/* Endereço (16px no mobile) */
 .contact-brand-address {
   font-family: var(--font-secondary);
   font-style: normal;
-  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  font-size: var(--text-base); /* 16px */
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.5;
   margin-bottom: var(--space-xs);
 }
@@ -1253,16 +1277,23 @@
 .contact-brand-phones {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   margin-bottom: var(--space-xs);
 }
 
+/* Telefones e Links de Contato (min-height de toque no mobile) */
 .contact-brand-phones a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 12px;
   font-family: var(--font-secondary);
-  font-size: clamp(0.875rem, 1.6vw, 0.95rem);
-  font-weight: 600;
+  font-size: var(--text-base); /* 16px */
+  font-weight: 700;
   color: #ffffff;
   transition: color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .contact-brand-phones a:hover {
@@ -1270,23 +1301,29 @@
 }
 
 .contact-brand-email a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 12px;
   font-family: var(--font-secondary);
-  font-size: clamp(0.85rem, 1.6vw, 0.925rem);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-base); /* 16px */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
   transition: color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .contact-brand-email a:hover {
   color: var(--color-telha);
 }
 
-/* Ícones sociais circulares em terracota como na imagem */
+/* Ícones Sociais (Touch Target 48px) */
 .contact-brand-socials {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
+  gap: var(--space-md); /* 16px */
   margin-top: var(--space-md);
 }
 
@@ -1294,33 +1331,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px; /* Touch target 48px */
+  height: 48px;
   border-radius: var(--radius-full);
-  background-color: var(--color-telha); /* #C06A2C - Laranja Terracota idêntico à imagem */
+  background-color: var(--color-telha);
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(192, 106, 44, 0.4);
   transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .brand-social-circle:hover {
-  background-color: var(--color-terra); /* #8C451B */
+  background-color: var(--color-terra);
   transform: translateY(-3px) scale(1.08);
   box-shadow: 0 8px 20px rgba(140, 69, 27, 0.5);
   color: #ffffff;
 }
 
 .brand-social-circle svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
 }
 
 @media (max-width: 768px) {
+  .contact-blueprint-strip {
+    min-height: 180px;
+    clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
+    margin-top: 0;
+  }
+  .contact-blueprint-bg {
+    background-attachment: scroll; /* Performance otimizada para touch */
+  }
+  .contact-main-body {
+    margin-top: 0;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
   .contact-brand-container {
     flex-direction: column-reverse;
     text-align: center;
-    gap: var(--space-2xl);
+    gap: var(--space-xl); /* 24px */
   }
   .contact-mcmv-badge-col {
     justify-content: center;
@@ -1331,15 +1382,11 @@
 /* ──────────────────────────────────────────────────────────
  * ANIMAÇÕES DE ENTRADA (Scroll Reveal)
  * ──────────────────────────────────────────────────────────
- * Elementos aparecem suavemente ao entrar na viewport.
- * A classe .is-revealed é adicionada pelo IntersectionObserver
- * no arquivo main.js.
  */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease,
-              transform 0.6s ease;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal-on-scroll.is-revealed {
@@ -1347,70 +1394,23 @@
   transform: translateY(0);
 }
 
-/* Atraso escalonado para grupos de elementos */
-.reveal-on-scroll:nth-child(2) { transition-delay: 0.1s; }
-.reveal-on-scroll:nth-child(3) { transition-delay: 0.2s; }
-.reveal-on-scroll:nth-child(4) { transition-delay: 0.3s; }
-.reveal-on-scroll:nth-child(5) { transition-delay: 0.4s; }
-.reveal-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+.reveal-on-scroll:nth-child(2) { transition-delay: 0.08s; }
+.reveal-on-scroll:nth-child(3) { transition-delay: 0.16s; }
+.reveal-on-scroll:nth-child(4) { transition-delay: 0.24s; }
 
 /* ──────────────────────────────────────────────────────────
- * RESPONSIVIDADE GERAL DOS COMPONENTES
+ * RESPONSIVIDADE GLOBAL (Mobile 320px - 768px)
  * ──────────────────────────────────────────────────────────
  */
-@media (max-width: 1024px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
-  .about-image-wrapper {
-    max-width: 500px;
-    margin-inline: auto;
-  }
-
-  .memorial-content {
-    flex-direction: column;
-  }
-
-  .memorial-banner {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
   .site-section {
-    padding-block: var(--space-3xl);
-  }
-
-  .models-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-slide {
-    flex: 0 0 calc(50% - var(--space-md));
-  }
-
-  .section-title {
-    font-size: var(--text-2xl);
-  }
-
-  .hero-actions {
-    flex-direction: column;
+    padding-block: var(--space-3xl); /* 48px a 64px */
+    min-height: auto; /* Permite fluxo natural e sem sobreposição em mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .gallery-slide {
-    flex: 0 0 calc(100% - var(--space-md));
-  }
-
-  .contact-form-wrapper {
-    padding: var(--space-lg);
+  .site-section {
+    padding-block: var(--space-2xl); /* 40px a 48px */
   }
 }
