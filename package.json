@@ -1,0 +1,23 @@
+{
+  "name": "unatecnologia-site",
+  "version": "1.0.0",
+  "description": "Website institucional da UNA Tecnologia em Casas - Pré-moldados de Alto Desempenho",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve .",
+    "build": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "una-tecnologia",
+    "casas-pre-moldadas",
+    "construcao-civil",
+    "engenharia",
+    "santa-cruz-do-sul"
+  ],
+  "author": "ARTD STUDIO",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
