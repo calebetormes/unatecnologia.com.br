@@ -126,9 +126,10 @@ const initMenu = () => {
     });
   };
 
+  const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 68;
   const sectionObserver = new IntersectionObserver(onSectionVisible, {
-    threshold: 0.3,
-    rootMargin: `-${parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '72')}px 0px 0px 0px`
+    threshold: 0.2,
+    rootMargin: `-${headerHeight}px 0px 0px 0px`
   });
 
   sections.forEach(section => sectionObserver.observe(section));
@@ -236,9 +237,9 @@ const initGalleryCarousel = () => {
     const maxIndex = getMaxIndex();
     currentIndex = Math.max(0, Math.min(index, maxIndex));
 
-    // Calcula o offset em pixels
+    // Calcula o offset em pixels com suporte a fallback de renderização
     const slideEl = slides[0];
-    const slideWidth = slideEl.getBoundingClientRect().width;
+    const slideWidth = slideEl ? (slideEl.getBoundingClientRect().width || slideEl.offsetWidth || 300) : 300;
     const gap = 16; // var(--space-md)
     const offset = currentIndex * (slideWidth + gap);
     track.style.transform = `translateX(-${offset}px)`;
@@ -284,13 +285,20 @@ const initGalleryCarousel = () => {
   prevBtn?.addEventListener('click', () => { goToPrev(); resetAutoPlay(); });
   nextBtn?.addEventListener('click', () => { goToNext(); resetAutoPlay(); });
 
-  // Suporte a swipe (mobile)
+  // Suporte a swipe (mobile) com verificação de segurança
   let touchStartX = 0;
-  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+  track.addEventListener('touchstart', e => {
+    if (e.changedTouches && e.changedTouches.length > 0) {
+      touchStartX = e.changedTouches[0].clientX;
+    }
+  }, { passive: true });
+
   track.addEventListener('touchend', e => {
-    const dist = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(dist) > 50) {
-      if (dist > 0) goToNext(); else goToPrev();
+    if (e.changedTouches && e.changedTouches.length > 0) {
+      const dist = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(dist) > 50) {
+        if (dist > 0) goToNext(); else goToPrev();
+      }
     }
   }, { passive: true });
 
